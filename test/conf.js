@@ -5,11 +5,12 @@ exports.config = {
   framework: 'jasmine2',
 
   specs: [
-    'spec.js'
+    'spec.js',
+    '../howtos/**/spec.js'
   ],
   suites:{
     howtos:'../howtos/**/spec.js',
-    simple: '../howtos/**/spec.js'
+    simple: 'spec.js'
   },
   multiCapabilities: [{
     'browserName': 'phantomjs',
@@ -22,10 +23,10 @@ exports.config = {
      */
     'phantomjs.binary.path': require('phantomjs').path,
 
-    /*
+    /*     
      * Command line args to pass to ghostdriver, phantomjs's browser driver.
      * See https://github.com/detro/ghostdriver#faq
-     */
+    */
     'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
   }, {
     browserName: 'chrome',
@@ -45,5 +46,15 @@ exports.config = {
          args: ['--lang=en',
            '--window-size=414,696']
     }
-  }]
+  }],
+  jasmineNodeOpts: {
+      // If true, display spec names.
+      isVerbose: false,
+      // If true, print colors to the terminal.
+      showColors: true,
+      // If true, include stack traces in failures.
+      includeStackTrace: true,
+      // Default time to wait in ms before a test fails.
+      defaultTimeoutInterval: 60000
+    },
 };

@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "express": "~3.4.0",
-    "protractor": "2.2.0",
+    "protractor": "2.3.0",
     "mkdirp": "~0.3.5",
     "q": "1.0.0",
     "firefox-profile": "0.3.4"

@@ -5,19 +5,21 @@ describe('slow calculator', function() {
   var result = element(by.binding('latest'));
 
   beforeEach(function() {
-    browser.get('http://juliemr.github.io/protractor-demo/');
+    browser.get('http://localhost:3456/');
+    browser.sleep(2000)
   });
 
-  afterEach(function() {
-    browser.manage().logs().get('performance').then(function(browserLogs) {
-      browserLogs.forEach(function(browserLog) {
-        var message = JSON.parse(browserLog.message).message;
-        if (message.method == 'Network.responseReceived') {
-          console.log(message);
-        }
-      });
-    });
-  });
+  // afterEach(function() {
+  //   browser.manage().logs().get('performance').then(function(browserLogs) {
+  //     browserLogs.forEach(function(browserLog) {
+  //       var message = JSON.parse(browserLog.message).message;
+  //       if (message.method == 'Network.responseReceived') {
+  //         console.log('---------------');
+  //         console.log(message.params.response.url);
+  //       }
+  //     });
+  //   });
+  // });
 
   it('should pass a normal test', function() {
     firstNum.sendKeys('1');

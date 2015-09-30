@@ -10,7 +10,7 @@ describe('slow calculator', function() {
   var result = element(by.binding('latest'));
 
   beforeEach(function() {
-    browser.get('http://juliemr.github.io/protractor-demo/');
+    browser.get('http://localhost:3456');
   });
   
   // basic case that passes -- no screenshot should be generated. 
